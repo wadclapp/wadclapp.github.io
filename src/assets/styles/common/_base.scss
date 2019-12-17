@@ -1,0 +1,110 @@
+* {
+  outline-color: $primary;
+
+  &::selection {
+    color: white;
+    background-color: $primary;
+  }
+}
+
+body {
+  font-size: $font-size-root;
+}
+
+a {
+  word-wrap: break-word;
+}
+
+#secondary p a,
+#secondary li a {
+  border-bottom: $border-width solid $secondary;
+
+  &:hover {
+    border-color: $link-hover-color;
+  }
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+mark {
+  color: $white;
+}
+
+#main {
+  ul,
+  ol {
+    margin: 1rem 0;
+    line-height: 1.5;
+
+    li {
+      margin-bottom: .5em;
+    }
+  }
+
+  ul {
+    list-style-type: square;
+  }
+}
+
+blockquote {
+  display: block;
+  margin: 2rem 0;
+  border-width: 0 0 0 $border-width;
+  border-style: solid;
+  border-color: $secondary;
+  background-color: $gray-100;
+  padding: 1em 1em 1em 2em;
+
+  cite {
+    margin-top: 1em;
+    display: block;
+    font-style: italic;
+    text-align: right;
+    font-size: $font-size-sm;
+  }
+}
+
+figure,
+.wp-caption {
+  &.full-width {
+    display: block;
+    margin: 3rem 0;
+    max-width: initial; //overwrite .wp-caption
+    width: 75vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+abbr,
+acronym {
+  text-decoration: none !important;
+  font-style: italic;
+
+  &[title] {
+    font-style: normal;
+    border-bottom: 1px dotted;
+    cursor: help;
+  }
+}
+
+dfn {
+  text-decoration: none;
+  font-style: italic;
+  cursor: help;
+}
+
+table {
+  @extend .table;
+
+  width: 100%;
+  margin: 2rem 0;
+}

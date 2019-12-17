@@ -1,0 +1,6 @@
+// share among all processed files, and use variables etc in .vue files
+// see vue.config.js
+@import "variables";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";

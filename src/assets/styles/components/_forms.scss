@@ -1,0 +1,56 @@
+/** Search form */
+.search-form {
+  @extend .form-inline;
+}
+
+.search-form label {
+  @extend .form-group;
+
+  font-weight: normal;
+}
+
+.search-form .search-field {
+  @extend .form-control;
+}
+
+.search-form .search-submit {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
+label {
+  font-size: $h6-font-size;
+  font-weight: $headings-font-weight;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-check {
+  margin-left: 1rem;
+
+  label {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+}
+
+[class*=" bg-"],
+[class^="bg-"] {
+  .form-control {
+    background-color: $white;
+  }
+}
+
+label.required {
+  &::after {
+    content: '*';
+    padding-left: .25rem;
+    color: $danger;
+  }
+}
+
+.form-check-input:disabled ~ .form-check-label {
+  color: $gray-500;
+}

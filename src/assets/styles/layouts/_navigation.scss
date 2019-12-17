@@ -1,0 +1,150 @@
+.nav {
+  li {
+    @extend .nav-item;
+  }
+
+  a {
+    @extend .nav-link;
+    @extend .text-white;
+  }
+
+  li.current-menu-item a {
+    //
+  }
+}
+
+.navbar > .container,
+.navbar > .container-fluid {
+  justify-content: start;
+}
+
+#navMobile {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  transition: $transition-base;
+  width: 100%;
+  height: 100vh;
+  background-color: $dark;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: calc(4rem + 75px) 1rem 4rem;
+  font-size: $font-size-xl;
+  text-align: center;
+}
+
+body.active-mobile-nav {
+  overflow: hidden;
+
+  #navMobile {
+    bottom: 0;
+  }
+}
+
+// toggler
+
+.navigation-toggler {
+  display: inline-block;
+  padding: 12px 12px #{12px + $border-width 12px};
+  line-height: 0;
+  cursor: pointer;
+
+  .navbar-toggler {
+    position: relative;
+    border: none;
+    padding: 0;
+    width: 35px;
+    height: 20px;
+    font-size: 1rem;
+    line-height: 16px;
+    outline: 0 !important;
+
+    .navbar-toggler-icon {
+      background-image: none; //remove default
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      height: $border-width;
+      width: 100%;
+      background: $white;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: $transition-base;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 50%;
+      }
+
+      &:nth-child(4) {
+        top: 100%;
+      }
+    }
+
+    &.open span {
+      &:nth-child(1),
+      &:nth-child(4) {
+        left: 50%;
+        opacity: 0;
+        top: 50%;
+        width: 0;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.link-wrap {
+  position: relative;
+
+  .link-icon {
+    display: none;
+    position: absolute;
+    width: 20px;
+    right: -20px;
+    overflow: hidden;
+
+    > span {
+      padding-left: .25rem;
+      position: relative;
+      left: -100%;
+      transition: left $easeInExpo $trans-duration;
+    }
+  }
+}
+
+#navigation {
+  a:hover {
+    .link-wrap {
+      .link-icon {
+        > span {
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .link-wrap {
+    .link-icon {
+      display: inline-block;
+    }
+  }
+}

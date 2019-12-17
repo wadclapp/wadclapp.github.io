@@ -1,0 +1,50 @@
+#footer {
+  padding: 1rem 0;
+  user-select: none;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .footer-items {
+    display: flex;
+    align-items: center;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .footer-items .footer-item {
+      margin-right: 1rem;
+
+      &:first-child {
+        margin-right: 2rem;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    .footer-items {
+      margin-top: 1rem;
+      flex-direction: column;
+
+      .footer-item {
+        margin-bottom: 1rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  svg {
+    fill: $white;
+  }
+}
+
+#logo {
+  width: 50px;
+}

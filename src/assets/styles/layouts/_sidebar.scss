@@ -1,0 +1,85 @@
+#sidebar {
+  text-align: center;
+  color: $white;
+  user-select: none;
+
+  #sidebar-main {
+    padding: 2rem 0 4rem;
+  }
+
+  img#portrait {
+    @extend .mx-auto;
+
+    display: block;
+    width: 160px;
+    margin-bottom: .75rem;
+  }
+
+  .aside-section {
+    padding: 2rem 1rem;
+  }
+
+  header {
+    padding: 0 .5rem 2rem;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: $font-size-lg;
+      margin: 0 0 .75rem;
+    }
+
+    p {
+      color: $gray-300;
+    }
+
+    .location {
+      color: $accent;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  #navigation {
+    text-align: center;
+
+    .navbar-nav {
+      width: 100%;
+      font-weight: 600;
+
+      li {
+        border-bottom: $border-width solid $dark;
+
+        a {
+          background-color: $gray-600;
+          transition: $transition-base;
+
+          &:hover {
+            color: $dark !important;
+            background-color: $accent;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  #sidebar {
+    .aside-section {
+      padding: 2rem;
+    }
+  }
+}
+
+@media (max-height: 550px) {
+  #sidebar {
+    #sidebar-main {
+      display: block;
+      overflow-y: auto;
+    }
+
+    img#portrait {
+      display: none;
+    }
+  }
+}

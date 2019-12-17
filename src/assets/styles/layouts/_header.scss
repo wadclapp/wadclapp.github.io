@@ -1,0 +1,32 @@
+#header {
+  user-select: none;
+
+  #header-desktop {
+    //
+  }
+
+  #header-mobile {
+    display: none;
+    position: relative;
+    z-index: 1010;
+    height: 75px;
+
+    > .navbar {
+      height: 75px;
+    }
+
+    img {
+      height: 40px;
+    }
+  }
+
+  #banner {
+    .brand img {
+      max-width: 300px;
+    }
+  }
+
+  #hero {
+    padding: 1rem 0;
+  }
+}

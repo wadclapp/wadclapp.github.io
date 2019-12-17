@@ -1,0 +1,88 @@
+.form-group {
+  position: relative;
+
+  input[type="email"].form-control {
+    padding-right: #{$input-btn-padding-x + (30px/$font-size-root) * 1rem};
+  }
+
+  &.invalid {
+    input,
+    textarea {
+      border-color: $danger;
+    }
+  }
+}
+
+.error-message {
+  font-size: $font-size-sm;
+  color: $danger;
+}
+
+.bg-primary .error-message {
+  color: $accent;
+}
+
+.validation-status {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+
+  .validation-icon {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    span {
+      display: block;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      background: $danger;
+      opacity: 1;
+      top: 50%;
+      left: 0;
+      transform: rotate(0deg) translate(0, -2px);
+      transform-origin: center;
+      transition: all $trans-duration $trans-easing;
+
+      &:nth-child(1) {
+        right: 0;
+        top: 100%;
+        width: 0;
+        left: 50%;
+        transform: rotate(0deg) translate(-100%, calc(-50% - 2px));
+      }
+
+      &:nth-child(2) {
+        transform: rotate(-90deg) translate(2px, 0);
+      }
+
+      &:nth-child(3) {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.valid {
+    .validation-icon {
+      span {
+        background-color: $success;
+
+        &:nth-child(1) {
+          width: 40%;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-90deg) translate(2px, 0);
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

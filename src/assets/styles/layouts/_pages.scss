@@ -1,0 +1,106 @@
+[class^="view-"]:not(.view-home) {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    // triangle
+    width: 0;
+    height: 0;
+    border-bottom: 75vw solid transparent;
+    border-left: 75vw solid $primary-bg-lighter;
+  }
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: $primary;
+  color: $white;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  > * {
+    position: relative;
+    z-index: 5;
+  }
+
+  &.hero-lg {
+    min-height: 300px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.section {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  @include media-breakpoint-up(md) {
+    &[class*=" bg-"],
+    &[class^="bg-"] {
+      margin-left: 3rem;
+    }
+  }
+}
+
+.subtle-bg-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.subtle-bg {
+  svg {
+    position: absolute;
+    left: -25%;
+    top: -25%;
+    bottom: -25%;
+    right: 0;
+    height: 150%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.05;
+    transform: rotateY(-15deg);
+  }
+}
+
+.bg-primary .subtle-bg {
+  svg {
+    opacity: 0.025;
+  }
+}
+
+//transitions
+
+.page-enter-active {
+  transition: left $trans-duration-long $easeOutExpo, opacity $trans-duration-long $easeInExpo;
+  position: relative;
+}
+
+.page-leave-active {
+  transition: opacity $trans-duration-long $easeInExpo;
+}
+
+.page-enter,
+.page-leave-to {
+  left: -100%;
+  opacity: 0;
+}
+
+.page-enter-to,
+.page-leave {
+  left: 0;
+  opacity: 1;
+}

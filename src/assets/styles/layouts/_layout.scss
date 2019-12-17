@@ -1,0 +1,136 @@
+html,
+body,
+#app,
+#wrapper,
+#sidebar {
+  overflow: hidden;
+}
+
+body {
+  min-width: 300px;
+}
+
+#wrapper {
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+#sidebar,
+#primary {
+  position: relative;
+}
+
+#sidebar {
+  flex: 0 0 25%;
+  max-width: 25%;
+
+  #sidebar-main {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    height: 100%;
+  }
+}
+
+#primary {
+  flex: 0 0 75%;
+  max-width: 75%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  // primary layout
+  display: flex;
+  flex-flow: column;
+
+  #header {
+    //
+  }
+
+  #secondary {
+    position: relative;
+    flex: 1;
+
+    #main {
+      min-height: 100vh;
+      height: 100%;
+      position: relative; //transitions
+    }
+
+    #aside {
+      //
+    }
+  }
+
+  #footer {
+    //
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .container,
+  .container-fluid {
+    padding: 0 3rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  #sidebar {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+
+  #primary {
+    flex: 0 0 80%;
+    max-width: 80%;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  #sidebar {
+    flex: 0 0 15%;
+    max-width: 15%;
+  }
+
+  #primary {
+    flex: 0 0 85%;
+    max-width: 85%;
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  #sidebar {
+    flex: 0 0 12.5%;
+    max-width: 12.5%;
+  }
+
+  #primary {
+    flex: 0 0 87.5%;
+    max-width: 87.5%;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #wrapper {
+    flex-flow: column;
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  #primary {
+    flex: 1 100%;
+    max-width: 100%;
+
+    #header {
+      #header-desktop {
+        display: none;
+      }
+
+      #header-mobile {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.text-white {
+  a {
+    color: $white;
+
+    &:hover {
+      color: darken($white, 15%);
+    }
+  }
+
+  &.bg-primary {
+    a {
+      color: $secondary;
+    }
+  }
+}
+
+.alert {
+  border-width: 0 !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+//transitions
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity $trans-duration-long $trans-easing;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave {
+  opacity: 1;
+}

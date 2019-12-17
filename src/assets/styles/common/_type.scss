@@ -1,0 +1,64 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.title {
+  small {
+    color: inherit;
+  }
+}
+
+h1,
+.h1 {
+  //
+}
+
+h2,
+.h2 {
+  //
+}
+
+h3,
+.h3 {
+  //
+}
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  //
+}
+
+p {
+  &:empty {
+    margin: 0;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  h1,
+  .h1 {
+    font-size: 2rem;
+  }
+
+  h2,
+  .h2 {
+    font-size: 1.75rem;
+  }
+}
